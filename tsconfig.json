@@ -37,7 +37,6 @@
     "isolatedModules": true,
     "noUncheckedSideEffectImports": true,
     "moduleDetection": "force",
-    "skipLibCheck": true,
-    "allowJs": true
+    "skipLibCheck": true
   }
 }
