@@ -3,10 +3,11 @@
   "type": "module",
   "version": "1.0.0",
   "description": "",
-  "main": "src/index.ts",
+  "main": "dist/index.js",
   "scripts": {
     "start": "tsx src/index.ts",
     "deploy": "tsx src/deploy-commands.ts",
+    "build": "tsc",
     "lint": "eslint src && prettier --write .",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
