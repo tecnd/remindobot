@@ -9,7 +9,7 @@ import { sequelize } from "../database.js";
 
 console.log("Initializing Reminder model");
 
-export type ReminderData = InferAttributes<Reminder, {omit: "id"}>
+export type ReminderData = InferAttributes<Reminder, { omit: "id" }>;
 
 export class Reminder extends Model<
   InferAttributes<Reminder>,

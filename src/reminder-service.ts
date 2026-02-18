@@ -34,9 +34,7 @@ export async function scheduleReminder(
   if (delay > MAX_TIMEOUT) {
     // For far future reminders, check again in 24 days
     setTimeout(() => {
-      scheduleReminder(client, reminder).catch((e) =>
-        console.error(e),
-      );
+      scheduleReminder(client, reminder).catch((e) => console.error(e));
     }, MAX_TIMEOUT);
 
     return;
