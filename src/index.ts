@@ -8,7 +8,7 @@ import {
   type CacheType,
   type Interaction,
 } from "discord.js";
-import { commands } from "./commands.js";
+import { commands } from "./commands/index.js";
 import { sequelize } from "./database.js";
 import { initializeReminders } from "./reminder-service.js";
 

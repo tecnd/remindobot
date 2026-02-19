@@ -1,9 +1,10 @@
 import "dotenv/config";
 import { REST, Routes } from "discord.js";
-import { commands } from "./commands.js";
+import { commands } from "./commands/index.js";
 
 const TOKEN = process.env.TOKEN!;
 const APPLICATION_ID = process.env.APPLICATION_ID!;
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const GUILD_ID = process.env.GUILD_ID!;
 
 // Construct and prepare an instance of the REST module
