@@ -8,6 +8,7 @@
     "start": "tsx src/index.ts",
     "deploy": "tsx src/deploy-commands.ts",
     "build": "tsc",
+    "build.docker": "docker build -t tecnd/remindobot . && docker push tecnd/remindobot",
     "lint": "eslint src && prettier --write .",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
