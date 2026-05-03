@@ -9,7 +9,7 @@ import {
   type Interaction,
 } from "discord.js";
 import { commands } from "./commands/index.js";
-import { sequelize } from "./database.js";
+import { runMigrations } from "./database.js";
 import { initializeReminders } from "./reminder-service.js";
 
 const TOKEN = process.env.TOKEN!;
@@ -18,10 +18,12 @@ const client = new Client({ intents: [GatewayIntentBits.Guilds] });
 
 client.once(Events.ClientReady, (readyClient) => {
   console.log(`Logged in as ${readyClient.user.tag}`);
-  sequelize
-    .sync()
-    .then(() => initializeReminders(readyClient))
-    .catch((e) => console.error(e));
+  try {
+    runMigrations();
+    void initializeReminders(readyClient).catch((e) => console.error(e));
+  } catch (e) {
+    console.error(e);
+  }
 });
 
 client.on(Events.InteractionCreate, (interaction: Interaction<CacheType>) => {

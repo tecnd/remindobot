@@ -1,8 +1,10 @@
 # Dockerfile
 FROM node:20-alpine
 
-# Install build dependencies for sqlite3
-RUN apk add sqlite
+# Native module (better-sqlite3) build toolchain
+RUN apk add --no-cache python3 make g++
+
+ENV SQLITE_PATH=/app/data/reminder.db
 
 # Set working directory
 WORKDIR /app
@@ -14,7 +16,7 @@ COPY . .
 RUN npm ci --only=production
 
 # Install dev dependencies for building TypeScript
-RUN npm install --save-dev typescript @types/node
+RUN npm install --save-dev typescript @types/node @types/better-sqlite3
 
 # Build TypeScript
 RUN npm run build
