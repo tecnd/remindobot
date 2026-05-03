@@ -9,20 +9,23 @@
     "deploy": "tsx src/deploy-commands.ts",
     "build": "tsc",
     "build.docker": "docker build -t tecnd/remindobot . && docker push tecnd/remindobot",
+    "db:generate": "drizzle-kit generate",
     "lint": "eslint src && prettier --write .",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "better-sqlite3": "^12.9.0",
     "discord.js": "^14.23.2",
     "dotenv": "^17.2.3",
-    "sequelize": "^6.37.7",
-    "sqlite3": "^5.1.7"
+    "drizzle-orm": "^0.45.2"
   },
   "devDependencies": {
     "@eslint/js": "^9.38.0",
+    "@types/better-sqlite3": "^7.6.13",
     "@types/node": "^24.8.1",
+    "drizzle-kit": "^0.31.10",
     "eslint": "^9.38.0",
     "eslint-config-prettier": "^10.1.8",
     "prettier": "^3.6.2",

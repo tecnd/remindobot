@@ -5,7 +5,7 @@ import {
   Role,
   SlashCommandBuilder,
 } from "discord.js";
-import type { ReminderData } from "../model/reminder.js";
+import type { ReminderData } from "../db/schema/reminders.js";
 import { scheduleReminder } from "../reminder-service.js";
 import { AbstractCommand, Command } from "./registry.js";
 
